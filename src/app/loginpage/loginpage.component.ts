@@ -25,6 +25,9 @@ export class LoginpageComponent {
   Emailfor2fa!: string;
   verification!: FormGroup<any>;
   singindata: boolean = false;
+  passwordReset: boolean = false;
+  
+
 
   constructor(
     private loginRegistrationService: LoginRegistrationService,
@@ -76,7 +79,12 @@ export class LoginpageComponent {
     // );
     this.singindata = true;
   }
+  passwordreset(){
+ 
+  }
+  PasswordReset(){
 
+  }
   register() {
     this.toastr.clear();
     if (this.registrationForm.valid) {
@@ -120,4 +128,18 @@ export class LoginpageComponent {
     this.isAContainerHidden = false;
     this.isBContainerHidden = true;
   }
+
+
+
+  isModalOpen = false;
+  Label = 'write your Email';
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
+
 }

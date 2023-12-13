@@ -17,7 +17,7 @@
       <h2 class="form_title title">Sign in to Website</h2>
       <span class="form__span">ketili iyos sheni dabruneba</span>
       <!-- <input class="form__input" type="text" placeholder="Name" /> -->
-      <div *ngIf="!singindata" style="text-align: center">
+      <div *ngIf="!singindata "  style="text-align: center">
         <p style="text-align: left">email</p>
         <input
           class="form__input"
@@ -34,6 +34,7 @@
           formControlName="password"
         />
       </div>
+
       <div *ngIf="singindata" style="text-align: center">
         <p style="text-align: left">Email</p>
         <input
@@ -52,8 +53,8 @@
           formControlName="facode"
         />
       </div>
-      <a href="#" class="form__link">Forgot your password?</a>
-      <button (click)="(check2fa)" class="form__button button submit">
+      <a (click)="openModal()" class="form__link">Forgot your password?</a>
+      <button (click)="check2fa()" class="form__button button submit">
         SING IN
       </button>
       <p class="text">I dont have an accaunt</p>
@@ -119,4 +120,16 @@
     </form>
   </div>
 </div>
+<button (click)="openModal()">Open Modal</button>
+<div *ngIf="isModalOpen" (closeModal)="closeModal()">
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>write your Email</h2>
+      <!-- Your content goes here -->
+    </div>
+  </div></div>
+
+
+
 <script src="main.js"></script>

@@ -60,6 +60,10 @@ export class LoginRegistrationService {
     return this.http.post(`${this.apiUrl}/sign-up`, data);
   }
 
+  passwordReset(email:string): Observable<any>{
+    return this.http.post(`${this.apiUrl}/passwordreset` , email);
+  }
+
   getUserData(): Observable<any> {
     const headers = this.getHeaders();
     return this.http.get(`${this.apiUrl}/user-data`, { headers });
