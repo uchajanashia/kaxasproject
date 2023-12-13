@@ -1,0 +1,16 @@
+<div class="regi" *ngIf="!login">
+  <button (click)="testtoggle()"><i class="fa-solid fa-user"></i></button>
+</div>
+<div class="action" *ngIf="login">
+  <div class="profile" (click)="toggleMenu()">
+    <img src="assets\profile.jpg" alt="" />
+  </div>
+  <div class="menu">
+    <h3>ucha janashia <br /><span>ipv8</span></h3>
+
+    <ul>
+      <li><a href="">my profile</a></li>
+      <li><a href="">logout</a></li>
+    </ul>
+  </div>
+</div>

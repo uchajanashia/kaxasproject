@@ -1,0 +1,119 @@
+:host {
+  --colorMain: #161616;
+  --colordarkText: #0c0c0c;
+  --colorDarkMainColor: #054211;
+  --colorText: #11a82f;
+  --colorBackground: #232323;
+  --postColor: #363636;
+  --paragraph: white;
+  --postColorHover: #515151;
+  --tagColor: #c6c6c6;
+  --shadowColor: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Bebas Neue', sans-serif; */
+  font-family: "Oswald", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--colorBackground);
+}
+.regi i {
+  padding: 5px;
+  font-size: 20px;
+  color: var(--colorText);
+  transition: 0.5s;
+}
+.regi i {
+  font-size: 1.7rem;
+  padding: 10px;
+  color: var(--colorText);
+  transition: 0.5s;
+}
+.regi i:hover {
+  color: var(--colorDarkMainColor);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: aliceblue;
+}
+.action {
+  width: 0px;
+}
+.action .profile {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.action .menu {
+  display: block;
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  padding: 10px 20px;
+  background: #fff;
+  width: 200px;
+  box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+}
+.action .menu.active {
+  visibility: visible;
+  opacity: 1;
+}
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  width: 100px;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.2em;
+}
+.action .menu h3 span {
+  font-size: 14px;
+  color: #ff0000;
+  font-weight: 400;
+}
+.action .menu ul li {
+  list-style: none;
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 1, 5, 0.5);
+  direction: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action .menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transform: 0.5s;
+}
+.action .menu ul li:hover a {
+  color: #5dff5d;
+}

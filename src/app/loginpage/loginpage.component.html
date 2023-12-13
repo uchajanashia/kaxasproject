@@ -1,0 +1,122 @@
+<div class="main">
+  <div
+    class="container"
+    [ngClass]="{
+      container: true,
+      'a-container': true,
+      'is-hidden': isAContainerHidden,
+      'no-hidden': !isAContainerHidden
+    }"
+  >
+    <form
+      class="form"
+      id="a-form"
+      [formGroup]="singinFrom"
+      (ngSubmit)="signIn()"
+    >
+      <h2 class="form_title title">Sign in to Website</h2>
+      <span class="form__span">ketili iyos sheni dabruneba</span>
+      <!-- <input class="form__input" type="text" placeholder="Name" /> -->
+      <div *ngIf="!singindata" style="text-align: center">
+        <p style="text-align: left">email</p>
+        <input
+          class="form__input"
+          type="text"
+          placeholder="Email"
+          formControlName="email"
+          [(ngModel)]="Emailfor2fa"
+        />
+        <p style="text-align: left">password</p>
+        <input
+          class="form__input"
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </div>
+      <div *ngIf="singindata" style="text-align: center">
+        <p style="text-align: left">Email</p>
+        <input
+          class="form__input"
+          type="text"
+          placeholder="Email"
+          formControlName="email"
+          value="Emailfor2fa"
+          readonly
+        />
+        <p style="text-align: left">2fa code</p>
+        <input
+          class="form__input"
+          type="text"
+          placeholder="2fa"
+          formControlName="facode"
+        />
+      </div>
+      <a href="#" class="form__link">Forgot your password?</a>
+      <button (click)="(check2fa)" class="form__button button submit">
+        SING IN
+      </button>
+      <p class="text">I dont have an accaunt</p>
+      <a class="abutton" (click)="changeClass1()">Create Account</a>
+      <!-- <button onclick="changeClass1()" class=" ">SIGN UP</button> -->
+    </form>
+  </div>
+  <div
+    class="container"
+    [ngClass]="{
+      container: true,
+      'b-container': true,
+      'is-hidden': isBContainerHidden,
+      'no-hidden': !isBContainerHidden
+    }"
+  >
+    <form
+      class="form"
+      id="b-form"
+      [formGroup]="registrationForm"
+      (ngSubmit)="register()"
+    >
+      <h2 class="form_title title">Create Account</h2>
+      <span class="form__span">Please don't use personal infromation</span>
+      <input
+        class="form__input"
+        type="text"
+        placeholder="Name"
+        formControlName="newName"
+      />
+      <p *ngIf="f['newName'].getError('required') != null">
+        saxeli aucilebelia
+      </p>
+      <input
+        class="form__input"
+        type="text"
+        placeholder="Email"
+        formControlName="newEmail"
+      />
+      <p *ngIf="f['newEmail'].getError('required') != null">
+        meili aucilebelia
+      </p>
+      <p *ngIf="f['newEmail'].getError('email') != null">
+        gamoiyene swori meili
+      </p>
+      <input
+        class="form__input"
+        type="password"
+        placeholder="Password"
+        formControlName="newPassword"
+      />
+      <p *ngIf="f['newPassword'].getError('required') != null">
+        gtxovt gamoiyenot dzlieri password
+      </p>
+      <p *ngIf="f['newPassword'].getError('pattern') != null">
+        gamoiyner min 1 symbol 1 didi aso da cifri , min 8 cifri
+      </p>
+
+      <button type="submit" class="form__button button submit">SIGN UP</button>
+      <p class="text">I have an account</p>
+      <a class="abutton" (click)="changeClass2()">Use existing account</a>
+      <!-- <button onclick="changeClass2()" class="">SIGN IN</button> -->
+    </form>
+  </div>
+</div>
+<script src="main.js"></script>

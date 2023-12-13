@@ -1,0 +1,67 @@
+:host {
+  --colorMain: #161616;
+  --colordarkText: #0c0c0c;
+  --colorDarkMainColor: #054211;
+  --colorText: #11a82f;
+  --colorBackground: #232323;
+  --postColor: #363636;
+  --paragraph: white;
+  --postColorHover: #515151;
+  --tagColor: #c6c6c6;
+  --shadowColor: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--colorBackground);
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo a {
+  text-decoration: none;
+  font-weight: 900;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.logo a {
+  font-size: 50px;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #175e15 0%,
+    #175e17 10%,
+    #1e611c 20%,
+    #2e7e2d 30%,
+    #66c04b 40%,
+    #76bc7f 50%,
+    #77cc7a 60%,
+    #67b64f 70%,
+    #2e7e2d 80%,
+    #1e611c 90%,
+    #175e15 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
