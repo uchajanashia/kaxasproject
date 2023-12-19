@@ -509,4 +509,20 @@ button.toast-close-button {
     width: 25em;
   }
 }
+.center-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: wheat;
+  width: 400px;
+  height: 300px;
+}
 
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

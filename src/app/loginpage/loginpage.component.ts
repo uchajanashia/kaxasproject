@@ -7,6 +7,7 @@ import {
   FormControl,
   FormGroup,
   Validators,
+  FormsModule
 } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -25,8 +26,7 @@ export class LoginpageComponent {
   Emailfor2fa!: string;
   verification!: FormGroup<any>;
   singindata: boolean = false;
-  passwordReset: boolean = false;
-  
+
 
 
   constructor(
@@ -79,12 +79,7 @@ export class LoginpageComponent {
     // );
     this.singindata = true;
   }
-  passwordreset(){
- 
-  }
-  PasswordReset(){
 
-  }
   register() {
     this.toastr.clear();
     if (this.registrationForm.valid) {
@@ -131,15 +126,32 @@ export class LoginpageComponent {
 
 
 
-  isModalOpen = false;
-  Label = 'write your Email';
-
-  openModal() {
-    this.isModalOpen = true;
+  isInputVisible: boolean = false;
+  isInputVisible1: boolean = false;
+  recoveryEmail: string = '';
+  passwordCode: string = '';
+  toggleVisibility() {
+    this.isInputVisible = !this.isInputVisible;
+  }
+  passwordReset() {
+    console.log('Submitted value:', this.recoveryEmail);
+    this.isInputVisible = !this.isInputVisible;
+    this.isInputVisible1 = !this.isInputVisible1;
+   
   }
 
-  closeModal() {
-    this.isModalOpen = false;
+  checkcode(){
+    // this.loginRegistrationService.passwordrestcheckcode(this.passwordCode).subscribe(
+    //       (response) => {
+    //         console.log('recovery code right:', response);
+    //         this.isInputVisible = false;
+    //         this.isInputVisible1 = false;
+    //       },
+    //       (error) => {
+    //         console.error('Error in Sign Up:', error);
+    //         // Handle error (e.g., display an error message)
+    //       })
+    this.isInputVisible1=false;
+    this.isInputVisible=false;
   }
-
 }

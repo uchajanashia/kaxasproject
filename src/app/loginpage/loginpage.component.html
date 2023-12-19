@@ -53,7 +53,7 @@
           formControlName="facode"
         />
       </div>
-      <a (click)="openModal()" class="form__link">Forgot your password?</a>
+      <a (click)="toggleVisibility()" class="form__link">Forgot your password?</a>
       <button (click)="check2fa()" class="form__button button submit">
         SING IN
       </button>
@@ -120,15 +120,21 @@
     </form>
   </div>
 </div>
-<button (click)="openModal()">Open Modal</button>
-<div *ngIf="isModalOpen" (closeModal)="closeModal()">
-  <div class="modal">
-    <div class="modal-content">
-      <span class="close" (click)="closeModal()">&times;</span>
-      <h2>write your Email</h2>
-      <!-- Your content goes here -->
-    </div>
-  </div></div>
+
+<div class="center-container" [ngClass]="{'invisible': !isInputVisible, 'visible': isInputVisible}">
+  <form>
+    <label for="inputField">Input:</label>
+    <input type="text" id="inputField" name="inputField" [(ngModel)]="recoveryEmail" placeholder="Type something...">
+    <button type="button" (click)="passwordReset()">send code </button>
+  </form>
+</div>
+
+<div class="center-container" [ngClass]="{'invisible': !isInputVisible1, 'visible': isInputVisible1}">
+  <form>
+    <input type="text" id="inputField" name="inputField" [(ngModel)]="passwordCode" placeholder="write code ">
+    <button type="button" (click)="checkcode()">recovery code </button>
+  </form>
+</div>
 
 
 

@@ -54,6 +54,12 @@ export class LoginRegistrationService {
       })
     );
   }
+  passwordreset(email: string){
+    return this.http.post(`${this.apiUrl}/passwordreset` , email)
+  }
+  passwordrestcheckcode(code : string){
+    return this.http.post(`${this.apiUrl}/codecheck` , code)
+  }
 
   signUp(name: string, email: string, password: string): Observable<any> {
     const data = { name, email, password };

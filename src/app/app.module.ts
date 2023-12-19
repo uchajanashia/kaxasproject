@@ -15,10 +15,12 @@ import { FooterNavigationComponent } from './footer/footer-navigation/footer-nav
 import { MainPageComponent } from './main-page/main-page.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
+
+
 
 @NgModule({
   declarations: [
@@ -41,8 +43,10 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
     AppRoutingModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
