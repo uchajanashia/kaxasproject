@@ -19,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
+import { WriteblogComponent } from './writeblog/writeblog.component';
+import { WriteblogarticleComponent } from './writeblogarticle/writeblogarticle.component';
 
 
 
@@ -37,6 +39,8 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
     MainPageComponent,
     LoginpageComponent,
     ProfilepageComponent,
+    WriteblogComponent,
+    WriteblogarticleComponent,
   ],
   imports: [
     BrowserModule,

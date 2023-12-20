@@ -1,0 +1,29 @@
+<app-header></app-header>
+<main>
+  <article>
+    <img class="cover" src="assets/crime-1862312.jpg" alt="cyber crime" />
+    <div class="articleContent">
+      <img
+        class="profilePicture"
+        src="assets/profilepic.jpg"
+        alt="profile picture"
+      />
+      <div class="profileText" style="width: 100%">
+        <input type="text" class="h2" />
+        <p>
+          <span class="name">Jack</span> <span class="surname">Anderson</span>
+          <span class="timePassed">4h</span>
+        </p>
+      </div>
+    </div>
+    <div class="text">
+      form
+      <textarea name="" id="" cols="30" rows="8" class="articleText one , p">
+      </textarea>
+
+      <ng-container #container></ng-container>
+      <button (click)="createChildComponent()">Create Blog Articles</button>
+    </div>
+  </article>
+</main>
+<app-footer></app-footer>

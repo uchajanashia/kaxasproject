@@ -5,11 +5,13 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { ProfileiconComponent } from './header/profileicon/ProfileiconComponent';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
+import { WriteblogComponent } from './writeblog/writeblog.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'login', component: LoginpageComponent },
-  { path: 'profile', component: ProfilepageComponent },
+  { path: 'blog', component: ProfilepageComponent },
+  { path: 'write', component: WriteblogComponent },
 ];
 
 @NgModule({
