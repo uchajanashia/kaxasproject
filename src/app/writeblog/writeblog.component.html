@@ -1,7 +1,13 @@
 <app-header></app-header>
 <main>
   <article>
-    <img class="cover" src="assets/crime-1862312.jpg" alt="cyber crime" />
+    <div *ngIf="imageUrl; else other_content">
+      <img [src]="imageUrl" class="cover" alt="Selected Image" />
+    </div>
+    <ng-template #other_content>
+      <img class="cover" src="assets/crime-1862312.jpg" alt="cyber crime"
+    /></ng-template>
+
     <div class="articleContent">
       <img
         class="profilePicture"
@@ -9,7 +15,7 @@
         alt="profile picture"
       />
       <div class="profileText" style="width: 100%">
-        <input type="text" class="h2" />
+        <input type="text" class="h2" [(ngModel)]="mainhead" />
         <p>
           <span class="name">Jack</span> <span class="surname">Anderson</span>
           <span class="timePassed">4h</span>
@@ -17,12 +23,60 @@
       </div>
     </div>
     <div class="text">
-      form
-      <textarea name="" id="" cols="30" rows="8" class="articleText one , p">
-      </textarea>
+      <form (ngSubmit)="submit()">
+        <textarea
+          id=""
+          cols="30"
+          rows="6"
+          [(ngModel)]="maintext"
+          name="maintext"
+        >
+main text</textarea
+        >
 
-      <ng-container #container></ng-container>
-      <button (click)="createChildComponent()">Create Blog Articles</button>
+        <div *ngIf="countChildComponent > 0">
+          <input type="text" class="h2" [(ngModel)]="head" name="head" />
+          <textarea id="" cols="30" rows="6" [(ngModel)]="text" name="text">
+text 1</textarea
+          >
+        </div>
+
+        <div *ngIf="countChildComponent > 1">
+          <input type="text" class="h2" [(ngModel)]="head1" name="head1" />
+          <textarea id="" cols="30" rows="6" [(ngModel)]="text1" name="text1">
+text 2</textarea
+          >
+        </div>
+        <div *ngIf="countChildComponent > 2">
+          <input type="text" class="h2" [(ngModel)]="head2" name="head2" />
+          <textarea id="" cols="30" rows="6" [(ngModel)]="text2" name="text2">
+text 3</textarea
+          >
+        </div>
+        <div *ngIf="countChildComponent > 3">
+          <input type="text" class="h2" [(ngModel)]="head3" name="head3" />
+          <textarea id="" cols="30" rows="6" [(ngModel)]="text3" name="text3">
+text 4</textarea
+          >
+        </div>
+        <div *ngIf="countChildComponent > 4">
+          <input type="text" class="h2" [(ngModel)]="head4" name="head4" />
+          <textarea id="" cols="30" rows="6" [(ngModel)]="text4" name="text4">
+text 5</textarea
+          >
+        </div>
+      </form>
+      <div
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <button (click)="createChildComponent()">add more</button>
+        <input type="file" (change)="onFileSelected($event)" />
+        <button type=" submit">submit blog</button>
+      </div>
     </div>
   </article>
 </main>

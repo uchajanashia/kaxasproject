@@ -54,11 +54,11 @@ export class LoginRegistrationService {
       })
     );
   }
-  passwordreset(email: string){
-    return this.http.post(`${this.apiUrl}/passwordreset` , email)
+  passwordreset(email: string) {
+    return this.http.post(`${this.apiUrl}/passwordreset`, email);
   }
-  passwordrestcheckcode(code : string){
-    return this.http.post(`${this.apiUrl}/codecheck` , code)
+  passwordrestcheckcode(code: string) {
+    return this.http.post(`${this.apiUrl}/codecheck`, code);
   }
 
   signUp(name: string, email: string, password: string): Observable<any> {
@@ -66,8 +66,8 @@ export class LoginRegistrationService {
     return this.http.post(`${this.apiUrl}/sign-up`, data);
   }
 
-  passwordReset(email:string): Observable<any>{
-    return this.http.post(`${this.apiUrl}/passwordreset` , email);
+  passwordReset(email: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/passwordreset`, email);
   }
 
   getUserData(): Observable<any> {
@@ -77,5 +77,37 @@ export class LoginRegistrationService {
 
   logout(): void {
     this.removeToken();
+  }
+
+  pushblog(
+    mainhead: string,
+    head: string,
+    head1: string,
+    head2: string,
+    head3: string,
+    head4: string,
+    maintext: string,
+    text: string,
+    text1: string,
+    text2: string,
+    text3: string,
+    text4: string,
+    image: File
+  ): Observable<any> {
+    const blog = {
+      mainhead,
+      maintext,
+      head,
+      text,
+      head1,
+      text1,
+      head2,
+      text2,
+      head3,
+      text3,
+      head4,
+      text4,
+    };
+    return this.http.post(`${this.apiUrl}/uploadblog`, { blog, File });
   }
 }

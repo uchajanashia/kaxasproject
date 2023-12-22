@@ -20,9 +20,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import { WriteblogComponent } from './writeblog/writeblog.component';
-import { WriteblogarticleComponent } from './writeblogarticle/writeblogarticle.component';
-
-
 
 @NgModule({
   declarations: [
@@ -40,7 +37,6 @@ import { WriteblogarticleComponent } from './writeblogarticle/writeblogarticle.c
     LoginpageComponent,
     ProfilepageComponent,
     WriteblogComponent,
-    WriteblogarticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +46,6 @@ import { WriteblogarticleComponent } from './writeblogarticle/writeblogarticle.c
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent],

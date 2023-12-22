@@ -7,7 +7,7 @@ import {
   FormControl,
   FormGroup,
   Validators,
-  FormsModule
+  FormsModule,
 } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -26,8 +26,6 @@ export class LoginpageComponent {
   Emailfor2fa!: string;
   verification!: FormGroup<any>;
   singindata: boolean = false;
-
-
 
   constructor(
     private loginRegistrationService: LoginRegistrationService,
@@ -124,8 +122,6 @@ export class LoginpageComponent {
     this.isBContainerHidden = true;
   }
 
-
-
   isInputVisible: boolean = false;
   isInputVisible1: boolean = false;
   recoveryEmail: string = '';
@@ -137,10 +133,9 @@ export class LoginpageComponent {
     console.log('Submitted value:', this.recoveryEmail);
     this.isInputVisible = !this.isInputVisible;
     this.isInputVisible1 = !this.isInputVisible1;
-   
   }
 
-  checkcode(){
+  checkcode() {
     // this.loginRegistrationService.passwordrestcheckcode(this.passwordCode).subscribe(
     //       (response) => {
     //         console.log('recovery code right:', response);
@@ -151,7 +146,7 @@ export class LoginpageComponent {
     //         console.error('Error in Sign Up:', error);
     //         // Handle error (e.g., display an error message)
     //       })
-    this.isInputVisible1=false;
-    this.isInputVisible=false;
+    this.isInputVisible1 = false;
+    this.isInputVisible = false;
   }
 }

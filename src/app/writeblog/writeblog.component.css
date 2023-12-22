@@ -155,7 +155,10 @@ textarea {
   } */
 
 /*this code above is whole blank page*/
-
+input,
+textarea {
+  box-shadow: 0px 0px 10px 0px var(--colorDarkMainColor);
+}
 article {
   width: 90vw;
 }
@@ -192,6 +195,20 @@ article {
   filter: none;
   letter-spacing: 1px;
   color: var(--colorText);
+}
+.h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  background: transparent;
+  filter: none;
+  letter-spacing: 1px;
+  color: var(--colorText);
+  width: 100%;
 }
 .text h2 {
   display: block;
@@ -271,5 +288,10 @@ article {
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+  .buttondiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 }
